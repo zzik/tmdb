@@ -1,10 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
+import MoviesContainer from './components/MoviesContainer'
 
 function App() {
 
   return (
-    <>
-      <h1>HI</h1>
-    </>
+    <BrowserRouter>
+      <MoviesContainer />
+    </BrowserRouter>
   )
 }
 
