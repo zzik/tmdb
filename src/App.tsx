@@ -3,13 +3,13 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { BrowserRouter } from "react-router-dom";
-import MoviesContainer from './components/MoviesContainer'
+import Display from './components/Display';
 
 function App() {
 
   return (
     <BrowserRouter>
-      <MoviesContainer />
+      <Display />
     </BrowserRouter>
   )
 }
