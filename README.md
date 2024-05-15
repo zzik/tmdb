@@ -1,8 +1,6 @@
-### Cool and quality looking readme.md
+### README.md
 
 
-
-### Repository name:
 ## TMDB
 (Rubicon)[https://www.rubicon-world.com/] front-end engineer job application
 - It uses react with an accent on design patterns and a slight emphasis on git
