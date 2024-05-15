@@ -1,14 +1,26 @@
-import { array, bool } from "prop-types";
 import MovieCard from "./MovieCard";
-import { ImageList } from "@mui/material";
 
-const MovieList = ({ loading, error, movies }) => {
+type MovieT = {
+  id: number;
+  title: string;
+  overview: string;
+  backdrop_path: string;
+};
+
+const MovieList = ({
+  loading,
+  error,
+  movies,
+}: {
+  loading: boolean;
+  error: boolean;
+  movies: MovieT[];
+}) => {
   if (loading && !error) return <div>Loading...</div>;
   if (!loading && error) return <div>error occurred.unable to load movies</div>;
   if (!movies) return null;
   return (
-    <ImageList cols={2}>
-
+    <div>
       {movies.slice(0, 10).map((movie) => (
         <MovieCard
           key={movie.id}
@@ -18,12 +30,8 @@ const MovieList = ({ loading, error, movies }) => {
           image_path={movie.backdrop_path}
         />
       ))}
-    </ImageList>
+    </div>
   );
 };
-MovieList.propTypes = {
-  loading: bool,
-  error: bool,
-  movies: array,
-};
+
 export default MovieList;
