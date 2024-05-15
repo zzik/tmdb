@@ -1,21 +1,7 @@
 import MovieCard from "./MovieCard";
+import { MovieState } from "../../types";
 
-type MovieT = {
-  id: number;
-  title: string;
-  overview: string;
-  backdrop_path: string;
-};
-
-const MovieList = ({
-  loading,
-  error,
-  movies,
-}: {
-  loading: boolean;
-  error: boolean;
-  movies: MovieT[];
-}) => {
+const MovieList = ({ loading, error, movies }: MovieState) => {
   if (loading && !error) return <div>Loading...</div>;
   if (!loading && error) return <div>error occurred.unable to load movies</div>;
   if (!movies) return null;
