@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const YOUR_API_KEY = import.meta.env.VITE_API_KEY
+
 const useFetchData = (endpoint: string) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -12,7 +14,7 @@ const useFetchData = (endpoint: string) => {
       try {
         const response = await axios.get(endpoint, {
           params: {
-            api_key: import.meta.env.VITE_API_KEY,
+            api_key: YOUR_API_KEY,
           },
         });
         setLoading(false);
