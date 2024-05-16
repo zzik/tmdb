@@ -1,5 +1,6 @@
 import { createContext } from "react";
+import { TypeContextT } from "../types";
 
-export const TypeContext = createContext<{ type: string; setType: (newType:string) => void }>(
+export const TypeContext = createContext<TypeContextT>(
   { type: "movie", setType: () => {} }
 );
