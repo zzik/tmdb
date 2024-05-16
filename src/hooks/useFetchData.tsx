@@ -12,7 +12,7 @@ const useFetchData = (endpoint: string) => {
       try {
         const response = await axios.get(endpoint, {
           params: {
-            api_key: import.meta.env.VITE_API_KEY,
+            api_key: "516bd90eaa5d6fc72dd79e7ba1bfaa28",
           },
         });
         setLoading(false);
