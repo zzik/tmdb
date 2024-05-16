@@ -1,40 +1,30 @@
-export type ContentType = 'movie' | 'tv_show'
-export type ContentTypeT = {
-  contentType: string,
-  setContentType: () => void
-}
-export type ShowT = {
-  id: number;
-  name: string;
-  overview: string;
-  backdrop_path: string;
-};
-export type ShowData = {
-  id: number;
-  name: string;
-  overview: string;
-  image_path: string;
-};
-export type ShowState = {
-  loading: boolean;
-  error: boolean;
-  shows: ShowT[];
-};
-export type MovieT = {
-  id: number;
-  title: string;
-  overview: string;
-  backdrop_path: string;
-};
-
-export type MovieData = {
+export type MediaData = {
   id: number;
   title: string;
   overview: string;
   image_path: string;
 };
-export type MovieState = {
+export type MediaType = {
+  mediaType: string;
+  baseLink: string;
+};
+export type MediaState = {
   loading: boolean;
   error: boolean;
-  movies: MovieT[];
+  media: MediaT[];
 };
+export type MediaT = {
+  title?: string;
+  name: string;
+  id: number;
+  overview: string;
+  backdrop_path: string;
+};
+export type QueryContextT = {
+  query: string;
+  setQuery: (newQuery: string) => void;
+  queryMode: boolean;
+  setQueryMode: (queryMode: boolean) => void;
+};
+export type ButtonT = { callback: () => void; disabled: boolean; text: string };
+export type TypeContextT = { type: string; setType: (type:string) => void }

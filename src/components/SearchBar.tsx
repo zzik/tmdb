@@ -1,18 +1,19 @@
 import { useContext } from "react";
-import { QueryContext } from "../context/QueryContext";
+import { QueryContext } from "../context";
+import { queryHandler } from "../utils";
 
 const SearchBar = () => {
-  const ctx = useContext(QueryContext);
-  const handler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    ctx.setQuery(event.target.value);
-  };
+  const queryContext = useContext(QueryContext);
+
   return (
     <div>
       <input
         type="text"
         placeholder="Search..."
         name="searchQuery"
-        onChange={handler}
+        onChange={(event) => {
+          queryHandler(event, queryContext);
+        }}
       />
     </div>
   );

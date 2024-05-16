@@ -1,20 +1,23 @@
 import { useContext } from "react";
-import { TypeContext } from "../context/TypeContext";
+import { TypeContext } from "../context";
+import Button from "./Button";
 
 const ContentTypeSwitch = () => {
-  const ctx = useContext(TypeContext);
-  const handler = () => {
-    ctx.type === "movie" ? ctx.setType("tv_show") : ctx.setType("movie");
+  const {type, setType} = useContext(TypeContext);
+  const isMovie = type === "movie"
+
+  const typeHandler = () => {
+    if (isMovie) {
+      setType("tv");
+    } else {
+      setType("movie");
+    }
   };
-  const disabled = ctx.type === "movie";
+
   return (
     <div>
-      <button onClick={handler} disabled={disabled}>
-        Movies
-      </button>
-      <button onClick={handler} disabled={!disabled}>
-        TV Shows
-      </button>
+      <Button text="Movies" callback={typeHandler} disabled={isMovie} />
+      <Button text="TV shows" callback={typeHandler} disabled={!isMovie} />
     </div>
   );
 };
