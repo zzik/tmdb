@@ -1,21 +1,22 @@
-import ContentTypeSwitch from "./ContentTypeSwitch";
+import { TypeContext, EndpointContext, QueryContext } from "../context";
 import SearchBar from "./SearchBar";
-import DataList from "./DataList";
-import { TypeContext } from "../context/TypeContext";
-import { useState } from "react";
-import { QueryContext } from "../context/QueryContext";
+import ContentTypeSwitch from "./ContentTypeSwitch";
+import MediaContainer from "../MediaContainer";
+import { useDisplayState } from "../hooks";
 
 const Display = () => {
-  const [type, setType] = useState("movie");
-  const [query, setQuery] = useState("");
+  const { type, setType, query, setQuery, queryMode, setQueryMode, baseLink, setBaseLink } = useDisplayState();
+  
   return (
-    <TypeContext.Provider value={{ type, setType }}>
-      <QueryContext.Provider value={{ query, setQuery }}>
-        <SearchBar />
-        <ContentTypeSwitch />
-        <DataList />
-      </QueryContext.Provider>
-    </TypeContext.Provider>
+    <QueryContext.Provider value={{ query, setQuery, queryMode, setQueryMode }}>
+      <TypeContext.Provider value={{ type, setType }}>
+        <EndpointContext.Provider value={{ baseLink, setBaseLink }}>
+          <SearchBar />
+          <ContentTypeSwitch />
+          <MediaContainer />
+        </EndpointContext.Provider>
+      </TypeContext.Provider>
+    </QueryContext.Provider>
   );
 };
 
