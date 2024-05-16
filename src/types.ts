@@ -26,3 +26,5 @@ export type QueryContextT = {
   queryMode: boolean;
   setQueryMode: (queryMode: boolean) => void;
 };
+export type ButtonT = { callback: () => void; disabled: boolean; text: string };
+export type TypeContextT = { type: string; setType: (type:string) => void }
