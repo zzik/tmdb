@@ -1,26 +1,43 @@
-import { QueryContextT } from "../types";
+import { QueryHandlerT } from "../types";
 
+const queryHandler = ({ event, queryContext }: QueryHandlerT) => {
+  // defaulting form element behavior
+  event.preventDefault();
 
-const queryHandler = (event: React.ChangeEvent<HTMLInputElement>, queryContext: QueryContextT) => {
+  // defining user input
+  const userInput = event.target.value;
 
-    const queryLength = event.target.value.length;
+  // defining length of user input
+  const userInputLength = userInput.length;
 
-    const queryFactory = {
-      startQuery : () => queryContext.setQueryMode(true),
-      updateQuery : () => queryContext.setQuery(event.target.value),
-      clearQuery : () => queryContext.setQuery(""),
-      stopQuery : () => queryContext.setQueryMode(false)
-    }
+  // destructuring query context payload
+  const { setQueryMode, setQuery } = queryContext;
 
-    const {startQuery, updateQuery, clearQuery, stopQuery} = queryFactory
+  // defining query context values and mutators for the sake of brevity
+  const [toggleQueryOn, toggleQueryOff, updateQuery, clearQuery] = [
+    () => setQueryMode(true),
+    () => setQueryMode(false),
+    () => setQuery(event.target.value),
+    () => setQuery(""),
+  ];
 
-  if (queryLength >= 3) {
-    startQuery()
-    updateQuery()
-  } else {
-    clearQuery()
-    stopQuery()
-  }
+  // set of functions that execute upon condition success
+  const success = () => {
+    toggleQueryOn();
+    updateQuery();
+  };
+
+  // set of functions that execute upon condition failure
+  const failure = () => {
+    clearQuery();
+    toggleQueryOff();
+  };
+
+  // defining condition parameters
+  const condition = userInputLength >= 3;
+
+  // running the check on condition
+  condition ? success() : failure();
 };
 
-export default queryHandler
+export default queryHandler;
