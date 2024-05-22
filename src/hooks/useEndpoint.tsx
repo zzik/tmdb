@@ -7,7 +7,7 @@ const useEndpoint = () => {
   const { type } = useContext(TypeContext);
   const { baseLink } = useContext(EndpointContext);
 
-  const endpoint = constructEndpoint(queryMode, query, baseLink, type);
+  const endpoint = constructEndpoint({queryMode, query, baseLink, type});
 
   return endpoint;
 };

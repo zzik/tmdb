@@ -3,8 +3,8 @@ import { TypeContext } from "../context";
 import Button from "./Button";
 
 const ContentTypeSwitch = () => {
-  const {type, setType} = useContext(TypeContext);
-  const isMovie = type === "movie"
+  const { type, setType } = useContext(TypeContext);
+  const isMovie = type === "movie";
 
   const typeHandler = () => {
     if (isMovie) {

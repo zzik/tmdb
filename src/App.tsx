@@ -1,17 +1,32 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import { BrowserRouter } from "react-router-dom";
-import Display from './components/Display';
+import Display from "./components/Display";
+import { Route, Routes } from "react-router-dom";
+import RouteContainer from "./components/Route/RouteContainer";
+import { TypeContext, EndpointContext, QueryContext } from "./context";
+import { useDisplayState } from "./hooks";
 
 function App() {
-
+  const {
+    type,
+    setType,
+    query,
+    setQuery,
+    queryMode,
+    setQueryMode,
+    baseLink,
+    setBaseLink,
+  } = useDisplayState();
   return (
-    <BrowserRouter>
-      <Display />
-    </BrowserRouter>
-  )
+    <QueryContext.Provider value={{ query, setQuery, queryMode, setQueryMode }}>
+      <TypeContext.Provider value={{ type, setType }}>
+        <EndpointContext.Provider value={{ baseLink, setBaseLink }}>
+          <Routes>
+            <Route path={`/`} element={<Display />} />
+            <Route path="/:contentType/:id" element={<RouteContainer />} />
+          </Routes>
+        </EndpointContext.Provider>
+      </TypeContext.Provider>
+    </QueryContext.Provider>
+  );
 }
 
-export default App
+export default App;
