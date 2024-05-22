@@ -4,7 +4,6 @@ import { queryHandler } from "../utils";
 
 const SearchBar = () => {
   const queryContext = useContext(QueryContext);
-
   return (
     <div>
       <input
@@ -12,8 +11,9 @@ const SearchBar = () => {
         placeholder="Search..."
         name="searchQuery"
         onChange={(event) => {
-          queryHandler(event, queryContext);
+          queryHandler({event, queryContext});
         }}
+        defaultValue={`${queryContext.query}`}
       />
     </div>
   );
