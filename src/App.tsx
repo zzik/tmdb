@@ -16,6 +16,7 @@ function App() {
     setBaseLink,
   } = useDisplayState();
   return (
+    <QueryContext.Provider value={{ query, setQuery, queryMode, setQueryMode }}>
       <TypeContext.Provider value={{ type, setType }}>
         <EndpointContext.Provider value={{ baseLink, setBaseLink }}>
           <Routes>
@@ -24,6 +25,8 @@ function App() {
           </Routes>
         </EndpointContext.Provider>
       </TypeContext.Provider>
+    </QueryContext.Provider>
+  );
 }
 
 export default App
