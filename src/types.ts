@@ -1,3 +1,9 @@
+export type EndpointGeneratorT = {
+  queryMode: boolean,
+  query: string,
+  baseLink: string,
+  type: string
+}
 export type QueryHandlerT = {
   event: React.ChangeEvent<HTMLInputElement>;
    queryContext: QueryContextT;

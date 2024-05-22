@@ -1,4 +1,11 @@
-const constructEndpoint = (queryMode:boolean, query:string, baseLink:string, type:string) => {
+import { EndpointGeneratorT } from "../types";
+
+const constructEndpoint = ({
+  queryMode,
+  query,
+  baseLink,
+  type,
+}: EndpointGeneratorT) => {
   const queryModeCheck = queryMode ? "/search/" : "/";
   const topRatedCheck = queryMode ? "" : "/top_rated";
   const queryAppend = queryMode ? `?query=${query}` : "";
