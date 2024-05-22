@@ -1,5 +1,5 @@
 import MediaCard from "./MediaCard";
-import { MediaState } from "./types";
+import { MediaState } from "../../types";
 
 const MediaList = ({ loading, error, media }: MediaState) => {
   if (loading && !error) return <div>Loading...</div>;
