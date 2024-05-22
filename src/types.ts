@@ -1,3 +1,7 @@
+export type QueryHandlerT = {
+  event: React.ChangeEvent<HTMLInputElement>;
+   queryContext: QueryContextT;
+  }
 export type RouteDataT = {
   title?: string;
   name: string;
