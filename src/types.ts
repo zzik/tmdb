@@ -1,3 +1,15 @@
+export type RouteDataT = {
+  title?: string;
+  name: string;
+  id: number;
+  overview: string;
+  backdrop_path: string;
+};
+export type RouteState = {
+  loading: boolean;
+  error: boolean;
+  data: RouteDataT;
+};
 export type MediaData = {
   id: number;
   title: string;
@@ -27,4 +39,4 @@ export type QueryContextT = {
   setQueryMode: (queryMode: boolean) => void;
 };
 export type ButtonT = { callback: () => void; disabled: boolean; text: string };
-export type TypeContextT = { type: string; setType: (type:string) => void }
+export type TypeContextT = { type: string; setType: (type: string) => void };
