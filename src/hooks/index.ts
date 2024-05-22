@@ -1,6 +1,7 @@
 import useEndpoint from "./useEndpoint";
-import useFetchData from "./useFetchData";
+import useFetchData from "./useFetchList";
 import useDisplayState from "./useDisplayState";
-import useFetchRoute from "./useFetchRoute";
+import useFetchItem from "./useFetchItem";
+import useFetchList from "./useFetchList";
 
-export { useEndpoint, useFetchData, useDisplayState, useFetchRoute };
+export { useEndpoint, useFetchData, useDisplayState, useFetchItem, useFetchList };

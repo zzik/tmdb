@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const YOUR_API_KEY = import.meta.env.VITE_API_KEY
+// const YOUR_API_KEY = import.meta.env.VITE_API_KEY
+const YOUR_API_KEY = "516bd90eaa5d6fc72dd79e7ba1bfaa28"
 
-const useFetchData = (endpoint: string) => {
+
+const useFetchList = (endpoint: string) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -31,4 +33,4 @@ const useFetchData = (endpoint: string) => {
 
   return [data, loading, error];
 };
-export default useFetchData;
+export default useFetchList;

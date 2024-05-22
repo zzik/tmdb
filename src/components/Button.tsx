@@ -3,9 +3,7 @@ import { ButtonT } from "../types";
 const Button = ({ callback, disabled, text }: ButtonT) => {
   return (
     <button
-      onClick={() => {
-        callback();
-      }}
+      onClick={callback}
       disabled={disabled}
     >
       {text}
