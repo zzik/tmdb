@@ -16,10 +16,12 @@ function App() {
     setBaseLink,
   } = useDisplayState();
   return (
-    <BrowserRouter>
-      <Display />
-    </BrowserRouter>
-  )
+        <EndpointContext.Provider value={{ baseLink, setBaseLink }}>
+          <Routes>
+            <Route path={`/`} element={<Display />} />
+            <Route path="/:contentType/:id" element={<RouteContainer />} />
+          </Routes>
+        </EndpointContext.Provider>
 }
 
 export default App
