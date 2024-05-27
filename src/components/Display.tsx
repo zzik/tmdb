@@ -4,11 +4,11 @@ import MediaContainer from "./Media/MediaContainer";
 
 const Display = () => {
   return (
-    <>
-      <SearchBar />
-      <ContentTypeSwitch />
-      <MediaContainer />
-    </>
+    <main className="display">
+        <SearchBar />
+        <ContentTypeSwitch />
+        <MediaContainer />
+    </main>
   );
 };
 

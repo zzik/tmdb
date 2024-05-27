@@ -6,11 +6,13 @@ const MediaContainer = () => {
   const endpoint = useEndpoint();
   const [data, loading, error] = useFetchList(endpoint);
   return (
-    <MediaList
-      loading={loading as boolean}
-      error={error as boolean}
-      data={data as MediaT[]}
-    />
+    <div className="media-container">
+      <MediaList
+        loading={loading as boolean}
+        error={error as boolean}
+        data={data as MediaT[]}
+      />
+    </div>
   );
 };
 
