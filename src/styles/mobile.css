@@ -1,6 +1,15 @@
 .display {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    /* max-width: 960px; */
+    background:linear-gradient(to top, #00202e, #000a0f);
+    padding: 0px 24px;
+}
+.app-title {
+    color: white;
+    text-align: center;
+    padding: 16px;
 }
 .search-bar {
     display: flex;
@@ -12,7 +21,7 @@
     color: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.7);
     width: 85%;
-    padding: 12px;
+    padding: 12px 0px 12px 24px;
     margin: 12px 0px;
     font-size: 16px;
     border-radius: 8px;
@@ -29,6 +38,7 @@
     align-items: center;
     justify-content: center;
     padding: 0px 12px 12px 12px;
+    gap: 12px;
 }
 .content-type-switch button {
     background:linear-gradient(to left, #00202e, #000a0f);
@@ -46,18 +56,24 @@
     background:#000a0f;
     color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(0, 0, 0, 1);
-
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
 }
 .media-container {
+    /* max-width: 700px; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    width: 100%;
 }
 .media-item {
+    overflow: hidden;
     display: block;
-    width: 300px;
-    height: 180px;
+    width: 90%;
+    /* height: 50%; */
+    /* width: 300px;
+    height: 180px; */
     position: relative;
     margin-bottom: 12px;
     border: 2px solid rgba(255, 255, 255, 0.7);
@@ -68,11 +84,15 @@
     -o-border-radius: 5px;
 }
 .media-item__image {
+    max-height: 200px; /* Set a max height to prevent vertical stretching */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    flex-grow: 1;
     position: relative;
     top: 0;
     width: 100%;
-    height: 170px;
+    height: auto;
     opacity: 0.8;
+    
 }
 .media-item__title-container {
     padding: 12px;
@@ -81,7 +101,7 @@
     bottom: 0;
     background:linear-gradient(to left, #00202e, #000a0f);
     width: 100%;
-    height: 3rem;
+    /* height: 3rem; */
     color: white;
     display: flex;
     justify-content: start;

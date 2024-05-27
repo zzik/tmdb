@@ -1,10 +1,9 @@
 @media (min-width: 1024px) {
-    .main-content {
-        display: flex;
-        justify-content: space-around;
+    .media-container {
+        max-width: 1024px;
     }
+    .search-bar input {
+    padding: 16px 0px 16px 36px;
 
-    .main-content__section {
-        max-width: 600px;
     }
 }
