@@ -1,0 +1,10 @@
+@media (min-width: 1024px) {
+    .main-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-content__section {
+        max-width: 600px;
+    }
+}
