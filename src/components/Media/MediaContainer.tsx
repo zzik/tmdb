@@ -1,5 +1,5 @@
 import { MediaT } from "../../types";
-import MediaList from "./MediaList";
+import { MediaList } from "./";
 import { useFetchList, useEndpoint } from "../../hooks";
 
 const MediaContainer = () => {
