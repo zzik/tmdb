@@ -7,9 +7,8 @@ const RouteDetails = ({ loading, error, data }: RouteState) => {
   if (!data) return null;
   return (
     <RouteCard
-      title={data.title}
       name={data.name}
-      backdrop_path={data.backdrop_path}
+      title={data.title}
       overview={data.overview}
       id={data.id}
     />
