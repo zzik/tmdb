@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import RouteContainer from "./components/Route/RouteContainer";
 import { TypeContext, EndpointContext, QueryContext } from "./context";
 import { useDisplayState } from "./hooks";
+import './styles/index.css'
 
 function App() {
   const {
