@@ -23,8 +23,10 @@ const queryHandler = ({ event, queryContext }: QueryHandlerT) => {
 
   // set of functions that execute upon condition success
   const success = () => {
-    toggleQueryOn();
-    updateQuery();
+    setTimeout(() => {
+      toggleQueryOn();
+      updateQuery();
+    }, 1000);
   };
 
   // set of functions that execute upon condition failure

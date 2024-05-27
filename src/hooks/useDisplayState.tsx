@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useDisplayState = () => {
-  const [type, setType] = useState("movie");
+  const [type, setType] = useState("tv");
   const [query, setQuery] = useState("");
   const [queryMode, setQueryMode] = useState(false);
   const [baseLink, setBaseLink] = useState("https://api.themoviedb.org/3");

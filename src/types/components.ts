@@ -4,7 +4,8 @@ export type MediaT = {
   title?: string;
   id: number;
   overview: string;
-  backdrop_path: string;
+  backdrop_path: string
+  poster_path: string
 };
 
 export type MediaState = {
