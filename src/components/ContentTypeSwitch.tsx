@@ -15,7 +15,7 @@ const ContentTypeSwitch = () => {
   };
 
   return (
-    <div>
+    <div className="content-type-switch">
       <Button text="Movies" callback={typeHandler} disabled={!isTV} />
       <Button text="TV shows" callback={typeHandler} disabled={isTV} />
     </div>

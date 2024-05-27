@@ -16,9 +16,16 @@ const MediaCard = ({
   const imagePath = useImagePath({ backdrop_path, poster_path });
   const media_title = title === undefined ? name : title;
   return (
-    <Link to={`/${type}/${id}`}>
-      <img loading="lazy" alt={`${overview}`} src={`${imagePath}`} />
-      <p>{media_title}</p>
+    <Link className="media-item" to={`/${type}/${id}`}>
+      <img
+        className="media-item__image"
+        loading="lazy"
+        alt={`${overview}`}
+        src={`${imagePath}`}
+      />
+      <div className="media-item__title-container">
+        <h3>{media_title}</h3>
+      </div>
     </Link>
   );
 };

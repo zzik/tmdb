@@ -13,7 +13,7 @@ const MediaList = ({ loading, error, data }: MediaState) => {
   const activeSearch = queryContext.queryMode ? data.length : 10
 
   return (
-    <div>
+    <>
       {data.slice(0, activeSearch).map((item) => (
         <MediaCard
           key={item.id}
@@ -24,7 +24,7 @@ const MediaList = ({ loading, error, data }: MediaState) => {
           poster_path={item.poster_path}
         />
       ))}
-    </div>
+    </>
   );
 };
 
