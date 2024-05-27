@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useDisplayState, useFetchItem } from "../../hooks";
 import constructRoute from "../../utils/constructRoute";
-import RouteDetails from "./RouteDetails";
+import { DetailsData } from "./";
 import { MediaT } from "../../types";
 
-const RouteContainer = () => {
+const DetailsContainer = () => {
   const { contentType, id } = useParams();
   const { baseLink } = useDisplayState();
   const route = constructRoute(
@@ -15,7 +15,7 @@ const RouteContainer = () => {
   const [data, loading, error] = useFetchItem(route);
 
   return (
-    <RouteDetails
+    <DetailsData
       data={data as MediaT}
       loading={loading as boolean}
       error={error as boolean}
@@ -23,4 +23,4 @@ const RouteContainer = () => {
   );
 };
 
-export default RouteContainer;
+export default DetailsContainer;
