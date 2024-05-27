@@ -10,6 +10,8 @@ const RouteDetails = ({ loading, error, data }: RouteState) => {
       name={data.name}
       title={data.title}
       overview={data.overview}
+      backdrop_path={data.backdrop_path}
+      poster_path={data.poster_path}
       id={data.id}
     />
   );
