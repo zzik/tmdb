@@ -1,13 +1,13 @@
 import SearchBar from "./SearchBar";
 import ContentTypeSwitch from "./ContentTypeSwitch";
-import MediaContainer from "./Media/MediaContainer";
+import { MediaContainer } from "./Media";
 
 const Display = () => {
   return (
     <main className="display">
-        <SearchBar />
-        <ContentTypeSwitch />
-        <MediaContainer />
+      <SearchBar />
+      <ContentTypeSwitch />
+      <MediaContainer />
     </main>
   );
 };

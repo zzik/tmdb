@@ -1,16 +1,16 @@
-import MediaCard from "./MediaCard";
+import { MediaCard } from "./";
 import { MediaState } from "../../types";
 import { useContext } from "react";
 import { QueryContext } from "../../context";
 
 const MediaList = ({ loading, error, data }: MediaState) => {
-  const queryContext = useContext(QueryContext)
-  
+  const queryContext = useContext(QueryContext);
+
   if (loading && !error) return <div>Loading...</div>;
   if (!loading && error) return <div>Error occurred. Unable to load media</div>;
   if (!data) return null;
-  
-  const activeSearch = queryContext.queryMode ? data.length : 10
+
+  const activeSearch = queryContext.queryMode ? data.length : 10;
 
   return (
     <>

@@ -3,7 +3,7 @@ import { MediaT } from "../../types";
 import useImagePath from "../../hooks/useImagePath";
 
 
-const RouteDetails = ({ name, title, overview, backdrop_path, poster_path }: MediaT) => {
+const DetailsCard = ({ name, title, overview, backdrop_path, poster_path }: MediaT) => {
     const media_title = title === undefined ? name : title
     const imagePath = useImagePath({backdrop_path, poster_path})
     console.log(imagePath)
@@ -17,4 +17,4 @@ const RouteDetails = ({ name, title, overview, backdrop_path, poster_path }: Med
   );
 };
 
-export default RouteDetails;
+export default DetailsCard;

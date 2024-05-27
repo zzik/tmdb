@@ -1,9 +1,9 @@
 import Display from "./components/Display";
 import { Route, Routes } from "react-router-dom";
-import RouteContainer from "./components/Route/RouteContainer";
+import { DetailsContainer } from "./components/Details";
 import { TypeContext, EndpointContext, QueryContext } from "./context";
 import { useDisplayState } from "./hooks";
-import './styles/index.css'
+import "./styles/index.css";
 
 function App() {
   const {
@@ -22,7 +22,7 @@ function App() {
         <EndpointContext.Provider value={{ baseLink, setBaseLink }}>
           <Routes>
             <Route path={`/`} element={<Display />} />
-            <Route path="/:contentType/:id" element={<RouteContainer />} />
+            <Route path="/:contentType/:id" element={<DetailsContainer />} />
           </Routes>
         </EndpointContext.Provider>
       </TypeContext.Provider>
