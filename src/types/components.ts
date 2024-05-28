@@ -4,8 +4,8 @@ export type MediaT = {
   title?: string;
   id: number;
   overview: string;
-  backdrop_path: string
-  poster_path: string
+  backdrop_path: string;
+  poster_path: string;
 };
 
 export type MediaState = {
@@ -18,3 +18,4 @@ export type RouteState = {
   error: boolean;
   data: MediaT;
 };
+export type VideoT = { key: string; name: string, type: string };
