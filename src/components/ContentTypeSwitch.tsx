@@ -5,7 +5,6 @@ import Button from "./Button";
 const ContentTypeSwitch = () => {
   const { type, setType } = useContext(TypeContext);
   const isTV = type === "tv";
-  console.log(type)
   const typeHandler = () => {
     if (isTV) {
       setType("movie");
