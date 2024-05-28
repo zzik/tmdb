@@ -1,4 +1,11 @@
 @media (min-width: 768px) {
+    .details {
+        max-width: 560px;
+        height: 100%;
+    }
+    .details__media {
+        width: 100%;
+    }
     .display {
         max-width: 960px; 
     }
