@@ -5,14 +5,6 @@
 [Rubicon](https://www.rubicon-world.com/) front-end engineer job application
 - It uses react with an accent on design patterns and a slight emphasis on git
 
-- In order to run the app, you will need to hard-code your API key.
-- The variable which handles the API key is at line four of the following component:
-```
-/src/hooks/useFetchData.tsx
-const YOUR_API_KEY = import.meta.env.VITE_API_KEY
-```
-- rewrite the value on the right side with your API key.
-
 - Steps to run locally:
 1. Open terminal inside the folder you choose as your workspace
 2. Run: ```git clone https://github.com/zzik/tmdb.git setup```
