@@ -16,7 +16,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-
+/* height: 100vh; */
     background-color: #777;
     background: radial-gradient(circle, #000000, #000033);
 }
@@ -24,5 +24,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  /* min-height: 90vh; */
+  height: 100%;
 }
