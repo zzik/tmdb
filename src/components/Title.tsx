@@ -3,10 +3,10 @@ import { TypeContext } from "../context"
 
 const Title = () => {
   const {type} = useContext(TypeContext)
-  const currentMediaType = type === 'tv' ? 'TV Show' : 'Movie'
+  const currentMediaType = type === 'tv' ? 'TV Shows' : 'Movies'
   return (
     <div className='app-title'>
-        <h1>{currentMediaType} Lookup</h1>
+        <h1>{currentMediaType}</h1>
     </div>
   )
 }
